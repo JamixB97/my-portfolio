@@ -1,22 +1,31 @@
-export default function Resume() {
+import React from 'react';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaNetworkWired, FaGithub } from 'react-icons/fa';
+import { SiExpress, SiTypescript, SiPostgresql } from 'react-icons/si';
+// import resumeFile from '../assets/files/resume.pdf';
+
+function Resume() {
   return (
-    <div>
+    <div className="resume">
       <h1>Resume</h1>
-      <p>
-        Donec a volutpat quam. Curabitur nec varius justo, sed rutrum ligula.
-        Curabitur pellentesque turpis sit amet eros iaculis, a mollis arcu
-        dictum. Ut vel ante eget massa ornare placerat. Etiam nisl orci, finibus
-        sodales volutpat et, hendrerit ut dolor. Suspendisse porta dictum nunc,
-        sed pretium risus rutrum eget. Nam consequat, ligula in faucibus
-        vestibulum, nisi justo laoreet risus, luctus luctus mi lacus sit amet
-        libero. Class aptent taciti sociosqu ad litora torquent per conubia
-        nostra, per inceptos himenaeos. Mauris pretium condimentum tellus eget
-        lobortis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-        Donec placerat accumsan mi, ut congue neque placerat eu. Donec nec ipsum
-        in velit pellentesque vehicula sit amet at augue. Maecenas aliquam
-        bibendum congue. Pellentesque semper, lectus non ullamcorper iaculis,
-        est ligula suscipit velit, sed bibendum turpis dui in sapien.
-      </p>
+      <a href='#' download className="resume-download">
+        Download My Resume
+      </a>
+      <h2>Proficiencies</h2>
+      <ul className="proficiencies-list">
+        <li><FaGitAlt /> Git</li>
+        <li><FaGithub /> GitHub</li>
+        <li><FaHtml5 /> HTML</li>
+        <li><FaCss3Alt /> CSS</li>
+        <li><FaJs /> JavaScript</li>
+        <li><SiTypescript /> TypeScript</li>
+        <li><FaReact /> React</li>
+        <li><FaNodeJs /> Node.js</li>
+        <li><SiExpress /> Express.js</li>
+        <li><SiPostgresql /> PostgreSQL</li>
+        <li><FaNetworkWired /> REST APIs</li>
+      </ul>
     </div>
   );
 }
+
+export default Resume;
