@@ -1,13 +1,13 @@
 import React from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaNetworkWired, FaGithub } from 'react-icons/fa';
 import { SiExpress, SiTypescript, SiPostgresql } from 'react-icons/si';
-// import resumeFile from '../assets/files/resume.pdf';
+import resumeFile from '../assets/files/resume.pdf';
 
 function Resume() {
   return (
     <div className="resume">
       <h1>Resume</h1>
-      <a href='#' download className="resume-download">
+      <a href={resumeFile} download className="resume-download">
         Download My Resume
       </a>
       <h2>Proficiencies</h2>

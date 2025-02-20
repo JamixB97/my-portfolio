@@ -28,11 +28,6 @@ body {
   flex: 1;
   padding: 20px;
 }
-.h-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .header {
   background-image: url('./assets/images/header.jpg');
@@ -45,7 +40,6 @@ body {
   align-items: center;
   height: 25vh;
   width: 100%;
-  transition: all 0.25s ease-in-out;
 }
 
 .header h1 {
@@ -64,7 +58,7 @@ body {
 .nav-item {
   font-size: 1.75rem;
   margin: 0;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
 .nav-link {
@@ -141,10 +135,16 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.685);
   color: var(--light);
   padding: 10px;
   border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-image-container:hover .project-info {
+  opacity: 1;
 }
 
 .project-links {
@@ -256,7 +256,7 @@ button:hover {
 .footer-icons a {
   color: var(--light);
   margin: 0 10px;
-  font-size: 3rem;;
+  font-size: 3rem;
   transition: color 0.3s ease;
 }
 
@@ -264,38 +264,36 @@ button:hover {
   color: var(--secondary);
 }
 
-@media (max-width: 1070px) {
-  .header {
-    padding-left: 75px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 25vh;
-    width: 100%;
-  }
-  
-  .header h1 {
-    font-size: 4rem;
-    padding: 10px;
-    color: var(--light);
-    text-shadow: 2px 2px 4px #000000;
-  }
-  
+/* Media query to change the nav bar into a column layout at 1071px or less */
+@media (max-width: 1071px) {
   .nav-tabs {
     flex-direction: column;
   }
-    
+
   .nav-item {
     font-size: .75rem;
   }
 }
 
-@media (max-width: 500px) {
-  .header h1 {
-    font-size: 2rem;
-  }
+@media (max-width: 768px) {
 
+  
+  .header h1 {
+    font-size: 3rem;
+  }
+  
+  .nav-tabs {
+    flex-direction: column;
+
+  }
+    
   .projects-grid {
     grid-template-columns: repeat(1, 1fr);
   }
-} 
+}
+
+@media (max-width: 425px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+}
