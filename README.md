@@ -6,7 +6,7 @@
         
 A portfolio application that tells a little about me and show's my projects using React.
 
-![Portfolio Screenshot](.src/assets/images/portfolio.png)
+![Portfolio Screenshot](./src/assets/images/portfolio.png)
         
 ## Table of Contents
 
