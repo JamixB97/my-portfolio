@@ -1,5 +1,6 @@
 import React from 'react';
 
+// This is the project component that displays the project image, title, and links to the deployed application and GitHub repository
 function Project({ image, title, appLink, repoLink }) {
   return (
     <div className="project">

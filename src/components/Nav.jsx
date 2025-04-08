@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 
+// This is the navigation component that contains the links to the different pages
 function Nav() {
   const currentPage = useLocation().pathname;
 
@@ -12,7 +13,7 @@ function Nav() {
             className={currentPage === '/' ? 'nav-link active' : 'nav-link'}
           >
             About Me
-          </Link>
+          </Link> 
         </li>
         <li className="nav-item">
           <Link

@@ -3,6 +3,7 @@ import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaNetworkWired, 
 import { SiExpress, SiTypescript, SiPostgresql } from 'react-icons/si';
 import resumeFile from '../assets/files/resume.pdf';
 
+// This is the resume component that displays the resume and proficiencies
 function Resume() {
   return (
     <div className="resume">

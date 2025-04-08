@@ -7,6 +7,7 @@ import project4Image from '../assets/images/image4.png';
 import project5Image from '../assets/images/image5.png';
 import project6Image from '../assets/images/image6.png';
 
+// This is the portfolio component that displays the projects
 function Portfolio() {
   return (
     <div className="portfolio">

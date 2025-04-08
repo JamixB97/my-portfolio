@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 
+// This is the footer component that contains social media icons
 export default function Footer() {
   return (
     <div className="footer">

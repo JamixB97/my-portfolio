@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// This is the contact component that contains the contact form
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,19 +13,20 @@ function Contact() {
     email: false,
     message: false,
   });
-
+  // This function handles the change in the input fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
+  // This function handles the blur event of the input fields
   const handleBlur = (e) => {
     const { name, value } = e.target;
     setErrors({ ...errors, [name]: value.trim() === '' });
   };
-
+  // This function handles the submit event of the form
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Validate the form data
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const newErrors = {
       name: formData.name.trim() === '',
@@ -37,7 +39,7 @@ function Contact() {
       console.log('Form submitted:', formData);
     }
   };
-
+  
   return (
     <div className="contact">
       <h1>Contact Me</h1>

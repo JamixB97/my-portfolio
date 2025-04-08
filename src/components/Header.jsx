@@ -1,5 +1,7 @@
 import Nav from './Nav';
 
+// This is the header component that will be used on all pages
+// It contains the name and the navigation bar
 export default function Header() {
   return (
     <div className="h-container">

@@ -1,5 +1,6 @@
 import image from '../assets/images/profile.jpg';
 
+// This is the home component that displays the about me section
 export default function Home() {
   return (
     <div className='home'>

@@ -8,6 +8,8 @@ import Resume from './pages/Resume';
 import Portfolio from './pages/Portfolio';
 import './index.css';
 
+// This is the main entry point of the application
+// It creates the router and renders the application
 const router = createBrowserRouter([
   {
     path: '/',
