@@ -1,15 +1,15 @@
 :root {
-  --primary: #747054;
-  --secondary: #e4c284;
-  --tertiary: #b1987d;
+  --primary: #aa9f7c;
+  --secondary: #ccc28a;
+  --tertiary: #dadada;
   --dark: #33322d;
-  --light: #f5f5f5;
+  --light: #fafafa;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: var(--primary);
-  color: var(--light);
+  font-family: 'Futura', 'Montserrat', sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
   margin: 0;
   padding: 0;
   display: flex;
@@ -22,21 +22,38 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative; /* Ensure pseudo-elements are positioned relative to this container */
 }
 
+.app-container::before,
+.app-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px; /* Adjust the width of the margins */;
+  background-color: var(--tertiary);
+}
+
+.app-container::before {
+  left: 0; /* Left margin */
+}
+
+.app-container::after {
+  right: 0; /* Right margin */
+}
 .content {
   flex: 1;
-  padding: 20px;
+  padding: 50px;
 }
 
 .header {
-  background-image: url('./assets/images/header.jpg');
+  background-color: var(--light);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding-left: 75px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 25vh;
   width: 100%;
@@ -45,52 +62,64 @@ body {
 .header h1 {
   font-size: 4rem;
   padding: 10px;
-  color: var(--light);
+  color: var(--dark);
   text-shadow: 2px 2px 4px #000000;
 }
 
-.nav-tabs {
-  list-style-type: none;
-  padding: 10px 100px 10px 0;
+.nav-container {
   display: flex;
+  justify-content: center; /* Center the navigation bar */
+  align-items: center;
+  background-color: var(--light);
+  padding: 10px 20px;
+  gap: 110px; /* Increase spacing between the links */
 }
-  
-.nav-item {
-  font-size: 1.75rem;
-  margin: 0;
-  padding: 0 20px;
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 100px; /* Add spacing between individual links */
+}
+
+.nav-center {
+  flex: 0; /* Keep the logo centered */
+  position: relative;
+}
+
+.nav-logo {
+  width: 200px; /* Adjust the logo size */
+  height: auto;
+  position: relative;
 }
 
 .nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: var(--light);
-  text-shadow: 1px 1px 4px #000000;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  transition: all 0.25s ease-in-out;
-}
-
-.nav-link:hover {
-  background-color: var(--light);
   color: var(--dark);
-  text-shadow: none;
+  text-decoration: none;
+  font-size: 1.5rem; /* Adjust font size if needed */
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  letter-spacing: 2px; /* Add spacing between letters */
+}
+.nav-link:hover {
+  background-color: var(--secondary);
+  color: var(--light);
 }
 
 .nav-link.active {
-  color: var(--dark);
-  text-shadow: none;
-  background-color: var(--light);
+  background-color: var(--secondary);
+  color: var(--light);
 }
 
 .home {
   padding: 0 20px;
 }
 
-.home p {
-  font-size: 1.25rem;
-  margin-bottom: 20px;
+.home-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .img {
@@ -98,6 +127,13 @@ body {
   height: 20rem;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.home-content p {
+  flex: 1;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin: 0;
 }
 
 .portfolio {
@@ -117,49 +153,59 @@ body {
 .project-image-container {
   position: relative;
   width: 100%;
-  padding-top: 50%;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-image-container:hover .project-image {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.project-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.project-info {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(0, 0, 0, 0.685);
+  background-color: rgba(0, 0, 0, 0.7); /* Darken the background */
   color: var(--light);
-  padding: 10px;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.project-image-container:hover .project-info {
-  opacity: 1;
+.project-image-container:hover .project-overlay {
+  opacity: 1; /* Show overlay on hover */
 }
 
-.project-links {
-  margin-top: 5px;
+.project-overlay h2 {
+  margin: 0;
+  font-size: 4rem;
+  margin-bottom: 10px;
 }
 
 .project-links a {
-  display: block;
-  margin-bottom: 5px;
+  color: var(--light);
   text-decoration: none;
-  color: var(--secondary);
+  display: block;
+  margin: 5px 0;
+  font-size: 2rem;
+  text-align: center;
+  transition: color 0.3s ease;
 }
 
 .project-links a:hover {
-  text-decoration: underline;
+  color: var(--secondary);
 }
 
 .contact {
@@ -193,7 +239,7 @@ body {
 button {
   padding: 10px 20px;
   background-color: var(--tertiary);
-  color: var(--light);
+  color: var(--dark);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -202,7 +248,7 @@ button {
 
 button:hover {
   background-color: var(--secondary);
-  color: var(--dark);
+  color: var(--light);
 }
 
 .resume {
@@ -214,38 +260,40 @@ button:hover {
   margin-bottom: 20px;
   padding: 10px 20px;
   background-color: var(--tertiary);
-  color: var(--light);
+  color: var(--dark);
   text-decoration: none;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .resume-download:hover {
   background-color: var(--secondary);
-  color: var(--dark);
+  color: var(--light);
 }
 
 .proficiencies-list {
-  list-style-type: none;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px; 
+  list-style-type: none; 
+  padding: 0; 
 }
 
 .proficiencies-list li {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
   display: flex;
-  align-items: center;
+  align-items: center; 
+  font-size: 1.25rem; 
 }
 
 .proficiencies-list li svg {
-  margin-right: 10px;
+  margin-right: 10px; 
 }
 
 .footer {
-  background-color: var(--dark);
-  color: var(--light);
+  background-color: var(--tertiary);
+  color: var(--dark);
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   width: 100%;
 }
 
@@ -254,7 +302,7 @@ button:hover {
 }
 
 .footer-icons a {
-  color: var(--light);
+  color: var(--dark);
   margin: 0 10px;
   font-size: 3rem;
   transition: color 0.3s ease;

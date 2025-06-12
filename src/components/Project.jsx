@@ -6,7 +6,7 @@ function Project({ image, title, appLink, repoLink }) {
     <div className="project">
       <div className="project-image-container">
         <img src={image} alt={`${title} screenshot`} className="project-image" />
-        <div className="project-info">
+        <div className="project-overlay">
           <h2>{title}</h2>
           <div className="project-links">
             <a href={appLink} target="_blank" rel="noopener noreferrer">Deployed Application</a>

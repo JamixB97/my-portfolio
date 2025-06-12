@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
-// This is the contact component that contains the contact form
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,20 +13,22 @@ function Contact() {
     email: false,
     message: false,
   });
-  // This function handles the change in the input fields
+
+  const [successMessage, setSuccessMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  // This function handles the blur event of the input fields
+
   const handleBlur = (e) => {
     const { name, value } = e.target;
     setErrors({ ...errors, [name]: value.trim() === '' });
   };
-  // This function handles the submit event of the form
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validate the form data
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const newErrors = {
       name: formData.name.trim() === '',
@@ -36,10 +38,31 @@ function Contact() {
     setErrors(newErrors);
 
     if (!Object.values(newErrors).some((error) => error)) {
-      console.log('Form submitted:', formData);
+      // Use EmailJS to send the email
+      emailjs
+        .send(
+          'service_vbwyic6', // Replace with your EmailJS service ID
+          'template_dkh5qgh', // Replace with your EmailJS template ID
+          {
+            from_name: formData.name, // Pass the name
+            from_email: formData.email, // Pass the email
+            message: formData.message, // Pass the message
+          },
+          '2qkhAlFerU9ouQ9FK' // Replace with your EmailJS user ID
+        )
+        .then(
+          (response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            setSuccessMessage('Your message has been sent successfully!');
+            setFormData({ name: '', email: '', message: '' });
+          },
+          (error) => {
+            console.error('FAILED...', error);
+          }
+        );
     }
   };
-  
+
   return (
     <div className="contact">
       <h1>Contact Me</h1>
@@ -84,8 +107,7 @@ function Contact() {
         </div>
         <button type="submit">Submit</button>
       </form>
-      <p>Email me at: bamesb@gmail.com</p>
-      <p>Call me at: 240-676-4115</p>
+      {successMessage && <p className="success">{successMessage}</p>}
     </div>
   );
 }

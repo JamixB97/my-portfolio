@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaNetworkWired, FaGithub } from 'react-icons/fa';
-import { SiExpress, SiTypescript, SiPostgresql } from 'react-icons/si';
-import resumeFile from '../assets/files/resume.pdf';
+import { SiExpress, SiTypescript, SiPostgresql, SiGraphql, SiMongodb } from 'react-icons/si';
+import resumeFile from '../assets/files/James_Boulden_Resume.pdf';
 
 // This is the resume component that displays the resume and proficiencies
 function Resume() {
@@ -23,6 +23,8 @@ function Resume() {
         <li><FaNodeJs /> Node.js</li>
         <li><SiExpress /> Express.js</li>
         <li><SiPostgresql /> PostgreSQL</li>
+        <li><SiGraphql /> GraphQL</li>
+        <li><SiMongodb /> MongoDB</li>
         <li><FaNetworkWired /> REST APIs</li>
       </ul>
     </div>

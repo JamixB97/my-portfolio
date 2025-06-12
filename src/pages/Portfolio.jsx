@@ -4,8 +4,6 @@ import project1Image from '../assets/images/image1.png';
 import project2Image from '../assets/images/image2.png';
 import project3Image from '../assets/images/image3.png';
 import project4Image from '../assets/images/image4.png';
-import project5Image from '../assets/images/image5.png';
-import project6Image from '../assets/images/image6.png';
 
 // This is the portfolio component that displays the projects
 function Portfolio() {
@@ -15,9 +13,9 @@ function Portfolio() {
       <div className="projects-grid">
         <Project
           image={project1Image}
-          title="Tic Tac Toe"
-          appLink="https://jamixb97.github.io/tic-tac-toe/"
-          repoLink="https://github.com/JamixB97/tic-tac-toe"
+          title="Respawn Room"
+          appLink="https://respawnroom-client.onrender.com/"
+          repoLink="https://github.com/Schanze117/RespawnRoom"
         />
         <Project
           image={project2Image}
@@ -27,27 +25,15 @@ function Portfolio() {
         />
         <Project
           image={project3Image}
-          title="Employee Tracker"
-          appLink="https://drive.google.com/file/d/1kttU8trywQQhlW6lplvpPc5YxH6OA5uo/view?usp=sharing"
-          repoLink="https://github.com/JamixB97/employee-tracker"
+          title="Book Search Engine"
+          appLink="https://book-search-engine-1xq1.onrender.com/"
+          repoLink="https://github.com/JamixB97/book-search-engine"
         />
         <Project
           image={project4Image}
-          title="Vehicle Builder"
-          appLink="https://drive.google.com/file/d/1ex9MfAXx3TeeFldD9ydGkOH9dWoN8l33/view?usp=sharing"
-          repoLink="https://github.com/JamixB97/vehicle-builder"
-        />
-        <Project
-          image={project5Image}
-          title="README Generator"
-          appLink="https://drive.google.com/file/d/10ZOSQl6H78NoiHqLLVuhDjcQvjVzKdUe/view?usp=sharing"
-          repoLink="https://github.com/JamixB97/readme-generator"
-        />
-        <Project
-          image={project6Image}
-          title="CSS Code Snippets"
-          appLink="https://jamixb97.github.io/css-code-snippets/"
-          repoLink="https://github.com/JamixB97/css-code-snippets"
+          title="Kanban Board"
+          appLink="https://kanban-board-gq3u.onrender.com/"
+          repoLink="https://github.com/JamixB97/Kanban-Board"
         />
       </div>
     </div>
