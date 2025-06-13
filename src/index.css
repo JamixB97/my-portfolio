@@ -389,7 +389,7 @@ button:hover {
     flex: none;
   }
   .nav-logo {
-    width: 70px;           /* Smaller logo */
+    width: 110px;           /* Smaller logo */
     height: auto;
   }
   .nav-link {
