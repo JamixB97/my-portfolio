@@ -72,7 +72,7 @@ body {
   justify-content: space-between; /* Push left and right to edges */
   align-items: center;
   background-color: var(--light);
-  padding: 10px 40px; /* Increase horizontal padding for more space */
+  padding: 10px 10px; /* Increase horizontal padding for more space */
   gap: 0;
 }
 
@@ -80,8 +80,16 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 60px; /* Increase space between links */
+  gap: 100px; /* Increase space between links */
   justify-content: flex-start;
+}
+
+.nav-left {
+  margin-right: 60px; /* Space between left links and logo */
+}
+
+.nav-right {
+  margin-left: 60px;  /* Space between logo and right links */
 }
 
 
@@ -350,6 +358,14 @@ button:hover {
   .projects-grid {
     grid-template-columns: 1fr; /* Show projects in a single column */
   }
+
+  .nav-left {
+  margin-right: 10px; /* Space between left links and logo */
+}
+
+.nav-right {
+  margin-left: 10px;  /* Space between logo and right links */
+}
 }
 
 @media (max-width: 425px) {
@@ -383,4 +399,5 @@ button:hover {
     order: 2;
     margin-left: auto;
   }
+
 }
