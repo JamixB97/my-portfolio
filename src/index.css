@@ -426,4 +426,19 @@ button:hover {
   .contact * {
     text-align: center;
   }
+  .contact form {
+    width: 80%;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .contact .form-group {
+    width: 100%;
+  }
+  .contact input,
+  .contact textarea,
+  .contact button {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
