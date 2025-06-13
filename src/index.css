@@ -430,11 +430,14 @@ button:hover {
   }
 
   .project-overlay h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    align-items: center;
+    padding-right: 10px;
   }
   .project-links a {
-    font-size: 1rem;
-    padding: 4px 0;
+    font-size: .9rem;
+    padding: 4px 10px 0px 0px;
+    align-items: center;
   }
   .project-overlay {
     padding: 10px;
