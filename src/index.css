@@ -372,7 +372,6 @@ button:hover {
   .nav-container {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
     padding: 4px 2px;      /* Smaller padding */
     min-height: 40px;      /* Optional: set a smaller min height */
   }
@@ -397,7 +396,19 @@ button:hover {
   }
   .nav-right {
     order: 2;
-    margin-left: auto;
+    margin-left: -20px; /* Adjust margin for right links */
+    align-items: flex-start
+  }
+
+  .nav-left {
+    order: 0;
+    margin-right: -20px;
+
+  }
+
+  h1 {
+    text-align: center;
+    width: 100%;
   }
 
 }
