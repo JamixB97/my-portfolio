@@ -369,9 +369,12 @@ button:hover {
 }
 
 @media (max-width: 425px) {
+
   .content {
     padding: 0px 0px 40px;
+    margin-top: -40px;
   }
+
   .app-container::before,
   .app-container::after {
   width: 10px;
@@ -382,6 +385,7 @@ button:hover {
     justify-content: space-between;
     padding: 4px 2px;      /* Smaller padding */
     min-height: 40px;      /* Optional: set a smaller min height */
+    margin-top: -30px; /* Adjust margin for smaller screens */
   }
   .nav-center {
     order: 1;
