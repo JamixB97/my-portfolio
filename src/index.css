@@ -428,6 +428,18 @@ button:hover {
   .resume * {
     text-align: center;
   }
+
+  .project-overlay h2 {
+    font-size: 2rem;
+  }
+  .project-links a {
+    font-size: 1rem;
+    padding: 4px 0;
+  }
+  .project-overlay {
+    padding: 10px;
+  }
+
   .contact * {
     text-align: center;
   }
