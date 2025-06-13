@@ -372,6 +372,11 @@ button:hover {
   .content {
     padding: 0px 0px 40px;
   }
+  .app-container::before,
+  .app-container::after {
+  width: 10px;
+}
+  
   .nav-container {
     flex-direction: row;
     justify-content: space-between;
@@ -427,7 +432,7 @@ button:hover {
     text-align: center;
   }
   .contact form {
-    width: 80%;
+    width: 90%;
     max-width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
